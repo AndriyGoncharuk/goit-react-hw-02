@@ -11,7 +11,6 @@ export default function App() {
     bad: 0,
   });
 
-  // Використовуємо useEffect для збереження і відновлення стану з локального сховища
   useEffect(() => {
     const storedFeedback = JSON.parse(localStorage.getItem("feedback"));
     if (storedFeedback) {
