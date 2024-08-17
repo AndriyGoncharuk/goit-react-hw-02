@@ -1,11 +1,11 @@
 import styles from "./Options.module.css";
 
-const Options = ({
+export default function Options({
   options,
   onLeaveFeedback,
   onResetFeedback,
   hasFeedback,
-}) => {
+}) {
   return (
     <div className={styles.options}>
       {options.map((option) => (
@@ -24,6 +24,6 @@ const Options = ({
       )}
     </div>
   );
-};
+}
 
-export default Options;
+// export default Options;

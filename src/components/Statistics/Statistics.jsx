@@ -1,6 +1,12 @@
 import styles from "./Statistics.module.css";
 
-const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
+export default function Statistics({
+  good,
+  neutral,
+  bad,
+  total,
+  positivePercentage,
+}) {
   return (
     <div className={styles.statistics}>
       <p>Good: {good}</p>
@@ -10,6 +16,6 @@ const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
       <p>Positive feedback: {positivePercentage}%</p>
     </div>
   );
-};
+}
 
-export default Statistics;
+// export default Statistics;
