@@ -25,5 +25,3 @@ export default function Options({
     </div>
   );
 }
-
-// export default Options;

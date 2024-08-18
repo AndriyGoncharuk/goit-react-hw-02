@@ -1,8 +1,10 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+
+import Description from "../Description/Description.jsx";
 import Feedback from "../Feedback/Feedback.jsx";
-import Notification from "../Notification/Notifications.jsx";
 import Options from "../Options/Options.jsx";
-import Statistics from "../Statistics/Statistics.jsx";
+import Notification from "../Notification/Notifications.jsx";
+import style from "./App.module.css";
 
 export default function App() {
   const [feedback, setFeedback] = useState({
@@ -43,30 +45,22 @@ export default function App() {
   );
 
   return (
-    <div>
-      <h1>Sip Happens Café</h1>
-      <p>
-        Please leave your feedback about our service by selecting one of the
-        options below.
-      </p>
+    <div className={style.wrapper}>
+      <Description />
       <Options
         options={["good", "neutral", "bad"]}
         onLeaveFeedback={updateFeedback}
         onResetFeedback={resetFeedback}
         hasFeedback={totalFeedback > 0}
       />
-      {totalFeedback > 0 ? (
-        <Feedback>
-          <Statistics
-            good={feedback.good}
-            neutral={feedback.neutral}
-            bad={feedback.bad}
-            total={totalFeedback}
-            positivePercentage={positiveFeedbackPercentage}
-          />
-        </Feedback>
+      {totalFeedback ? (
+        <Feedback
+          feedback={feedback}
+          totalFeedback={totalFeedback}
+          positiveFeedbackPercentage={positiveFeedbackPercentage}
+        />
       ) : (
-        <Notification message="No feedback given yet." />
+        <Notification />
       )}
     </div>
   );

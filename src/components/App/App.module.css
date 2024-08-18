@@ -1,0 +1,9 @@
+.wrapper {
+  width: 1440px;
+  background-color: rgba(229, 216, 242, 0.503);
+  text-align: center;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: rgb(33, 52, 52);
+}
